@@ -1,0 +1,12 @@
+---
+import UserLayout from "../../layouts/UserLayout.astro";
+import { fetchUser } from "../../scripts/fetch-user";
+
+const randomUser = await fetchUser();
+---
+
+<UserLayout>
+  <div class="user__card">
+    <h2>{randomUser.name.first} {randomUser.name.last}</h2>
+  </div>
+</UserLayout>
